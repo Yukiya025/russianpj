@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 import os
+# Procfile: web: python app.py
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
