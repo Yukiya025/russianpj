@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+import os
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
@@ -22,5 +23,7 @@ def index():
         else:
             return render_template('index.html',
                                form_input= "惜しい！正解は'делаю'です")
+
+app.run(port=int(os.environ['PORT']))
 if __name__ == '__main__':
     app.run(debug=True)
