@@ -1,11 +1,33 @@
 body {
-  background-color: pink;
+  background: linear-gradient(-135deg, #a2d7dd, #19448e); /*#a2d7dd瓶覗, 19448e瑠璃紺*/
 }
 h1 {
-  color: blue;
+  color: #f39800; /*金茶*/
 }
 p {
-  color: red;
+  color: #180614; /*烏羽色*/
+}
+input#ans_btn {
+  width: 180px;
+  padding:15px;
+  color:#ffffff;
+  font-size: 15px;
+  line-height: 120%;
+  text-align: center;
+  text-decoration: none;
+  background: #1B73BA;
+  display: inline-block;
+  position:static;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  border-radius: 24px;
+  -webkit-box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  -moz-box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 table {
   border-collapse: collapse;
