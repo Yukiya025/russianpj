@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/rustyle.css">
 </head>
 <body>
-  <h1>{% block vrb0 %}{{ verb[i] }}{% endblock %}の現在活用</h1> <!--делать, verb0-->
+  <h1>{{ verb[0] }}の現在活用</h1> <!--verb0-->
   <table>
     <col><col><col><col>
     <tr>
@@ -17,21 +17,21 @@
     </tr>
     <tr>
       <td>я</td>
-      <td>{% block vrb1 %}{{ verb[i] }}{% endblock %}</td> <!--делаю, verb1-->
+      <td>{{ verb[1] }}</td> <!--verb1-->
       <td>мы</td>
-      <td>{% block vrb4 %}{{ verb[i] }}{% endblock %}</td><!--делаем, verb4-->
+      <td>{{ verb[4] }}</td><!--verb4-->
     </tr>
     <tr>
       <td>ты</td>
-      <td>{% block vrb2 %}{{ verb[i] }}{% endblock %}</td><!--делаешь, verb2-->
+      <td>{{ verb[2] }}</td><!--verb2-->
       <td>вы</td>
-      <td>{% block vrb5 %}{{ verb[i] }}{% endblock %}</td><!--делаете, verb5{% block verb5 %}{% endblock %}-->
+      <td>{{ verb[5] }}</td><!--verb5-->
     </tr>
     <tr>
       <td>он/она/оно</td>
-      <td>{% block vrb3 %}{{ verb[i] }}{% endblock %}</td><!--делает, verb3-->
+      <td>{{ verb[3] }}</td><!--verb3-->
       <td>они</td>
-      <td>{% block vrb6 %}{{ verb[i] }}{% endblock %}</td><!--делают, verb6-->
+      <td>{{ verb[6] }}</td><!--verb6-->
     </tr>
   </table>
 
