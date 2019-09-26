@@ -31,4 +31,16 @@ def practice():
     prac = c.execute('SELECT vb_y_id, firstpart, lastpart, я FROM vb_y WHERE id = 1')
     prac = prac.fetchone()
     print(str(prac[0]) + ". " + prac[1] + " " + prac[3] + " " + prac[2])
-practice()
+
+def verbtest():
+    conn = sqlite3.connect('rucon_forms_lab.db')
+    c = conn.cursor()
+
+    ppnoun = ["verb", "я", "ты", "он", "мы", "вы", "они"] # 0-6
+    ppn_l = []
+    for i in range(len(ppnoun)):
+        cor_ans = c.execute('SELECT ' + ppnoun[i] + ' FROM verbs WHERE id = 1') # s > cor_ans
+        cor_ans = cor_ans.fetchone()
+        ppn_l.append(cor_ans[0])
+    return ppn_l
+    # print(ppn_l) # 7つの要素

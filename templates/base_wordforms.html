@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/rustyle.css">
+</head>
+<body>
+  <h1>{% block vrb0 %}{{ verb[i] }}{% endblock %}の現在活用</h1> <!--делать, verb0-->
+  <table>
+    <col><col><col><col>
+    <tr>
+      <th>単数人称</th>
+      <th>活用</th>
+      <th>複数人称</th>
+      <th>活用</th>
+    </tr>
+    <tr>
+      <td>я</td>
+      <td>{% block vrb1 %}{{ verb[i] }}{% endblock %}</td> <!--делаю, verb1-->
+      <td>мы</td>
+      <td>{% block vrb4 %}{{ verb[i] }}{% endblock %}</td><!--делаем, verb4-->
+    </tr>
+    <tr>
+      <td>ты</td>
+      <td>{% block vrb2 %}{{ verb[i] }}{% endblock %}</td><!--делаешь, verb2-->
+      <td>вы</td>
+      <td>{% block vrb5 %}{{ verb[i] }}{% endblock %}</td><!--делаете, verb5{% block verb5 %}{% endblock %}-->
+    </tr>
+    <tr>
+      <td>он/она/оно</td>
+      <td>{% block vrb3 %}{{ verb[i] }}{% endblock %}</td><!--делает, verb3-->
+      <td>они</td>
+      <td>{% block vrb6 %}{{ verb[i] }}{% endblock %}</td><!--делают, verb6-->
+    </tr>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "base_wordforms.html" %}
+
+{% block title %}
+  動詞の活用
+{% endblock %}
+
+
+{% for i in range(7) %}
+  {% block vrb[i] %}
+    {{ verb[i] }} <!--"verb[" + str(i) + "]"-->
+  {% endblock %}
+{% endfor %}
