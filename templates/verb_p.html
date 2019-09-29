@@ -1,0 +1,14 @@
+{% extends "base_verb_p.html" %}
+
+{% block title %}
+  第一変化動詞{{ verb[0] }}現在形の活用
+{% endblock %}
+
+
+{% for i in range(7) %}
+    {{ verb[i] }} <!--"verb[" + str(i) + "]"-->
+{% endfor %}
+{% block content %}
+  <p>{{ verb[0] }}は第一変化動詞です。活用を覚えましょう。</p>
+  <a href="verb/do_f">練習する</a>
+{% endblock %}

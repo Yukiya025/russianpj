@@ -7,11 +7,11 @@ h1 {
 p {
   color: #180614; /*烏羽色*/
 }
-input#ans_btn {
-  width: 180px;
-  padding:15px;
+input {
+  width: 20%; /*180px*/
+  padding:1%; /*15px*/
+  font-size: 3vw; /*15px*/
   color:#ffffff;
-  font-size: 15px;
   line-height: 120%;
   text-align: center;
   text-decoration: none;
@@ -28,6 +28,12 @@ input#ans_btn {
   -moz-transition: 0.3s ease-out;
   -o-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
+}
+input#ans_btn {
+  background: #1B73BA;
+}
+input#grammardoor {
+  background: #bf7fff;
 }
 table {
   border-collapse: collapse;

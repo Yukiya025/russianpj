@@ -15,24 +15,33 @@ def verb_f():
     cor_ans = cor_ans.fetchone()
     return cor_ans[0] # cor_ans = cor_ans[0]
 
-    """
-    if cor_ans == "делаю":
-        print("OK")
-    else:
-        print("No")
-    """
-
 def practice():
+    import random
     conn = sqlite3.connect('rucon_forms_lab.db')
     c = conn.cursor()
     """
-
+    活用形を回答する問題を乱数表示
     """
-    prac = c.execute('SELECT vb_y_id, firstpart, lastpart, я FROM vb_y WHERE id = 1')
-    prac = prac.fetchone()
-    print(str(prac[0]) + ". " + prac[1] + " " + prac[3] + " " + prac[2])
+    vbid_l = ["vb_y_id", "vb_t_id", "vb_o_id", "vb_mi_id", "vb_v_id", "vb_oni_id", "vb_m_id", "vb_fm_id", "vb_n_id", "vb_p_id"] # 0-9, i
+    yap_l = ["я", "ты", "он", "мы", "вы", "они", "m", "f", "n", "p"] # 0-9, i
+    vbtable_l = ["vb_y", "vb_t", "vb_o", "vb_mi", "vb_v", "vb_oni", "vb_m", "vb_fm", "vb_n", "vb_p"] # 0-9, i
+    exs_l1 = [] # 例文前半を収録
+    exs_l2 = [] # 例文後半を収録
+    exs_l3 = [] # 例文解答を収録
+    for i in range(len(vbid_l)):
+        prac = c.execute('SELECT ' + vbid_l[i] + ', firstpart, lastpart, ' + yap_l[i] + ' FROM ' + vbtable_l[i] + ' WHERE id = 1')
+        prac = prac.fetchone()
+        ex1 = str(i) + ". " + prac[1] + " "
+        ex2 = " " + prac[2]
+        ex3 = prac[3]
+        exs_l1.append(ex1)
+        exs_l2.append(ex2)
+        exs_l3.append(ex3)
+        # print(exs_l1[i] + exs_l2[i])
+    # j = random.randint(0, 5)
+    return exs_l1, exs_l2, exs_l3
 
-def verbtest():
+def verb_p():
     conn = sqlite3.connect('rucon_forms_lab.db')
     c = conn.cursor()
 

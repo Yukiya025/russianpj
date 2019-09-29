@@ -1,3 +1,26 @@
 templates/base_wordforms.html
 templates/test.html
 templates/testa.html
+
+@app.route('/verb/do_f', methods=['GET', 'POST'])
+def do_f():
+    exs_l1, exs_l2, exs_l3 = ru_func.practice()
+    # j = random.randint(0, 5)
+    if request.method == 'GET':
+        return render_template('verb/do_f.html',
+                                ex0=exs_l1[3],
+                                ex1=exs_l2[3],
+                                )
+    else:
+        # 活用形を入力する
+        form_input = request.form['input']
+        if exs_l3[3] == form_input:
+            return render_template('verb/do_f.html',
+                                ex0=exs_l1[3],
+                                ex1=exs_l2[3],
+                                form_input= "正解！<" + exs_l3[3] + ">です。")
+        else:
+            return render_template('verb/do_f.html',
+                                ex0=exs_l1[3],
+                                ex1=exs_l2[3],
+                                form_input= "正解は <" + exs_l3[3] + "> です。もう一度してみてね。")
