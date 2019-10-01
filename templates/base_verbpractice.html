@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/css/rustyle.css">
+  <meta http-equiv="content-type" charset="utf-8">
+  <title>делать</title>
+</head>
+<body>
+  <form method="post" action="{{ url_for('do_f') }}/{{ question_no }}">
+    {#  更新ボタンで練習問題をランダムに表示するようにしたい #}
+    <p>{{ ex0 }} <input name="input" id="inputform" type="text" size="10" maxlength="10"> {{ ex1 }}</p>
+    <input id="ans_btn" name="answer" type="submit" value="解答する">
+  </form>
+  <p>
+    {{ form_input }}
+  </p>
+</body>
+</html>

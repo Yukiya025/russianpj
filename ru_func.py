@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import sqlite3
+import random
 def verb_f():
     """
     1. データベースrucon_forms_lab.dbを開く
@@ -37,10 +38,30 @@ def practice():
         exs_l1.append(ex1)
         exs_l2.append(ex2)
         exs_l3.append(ex3)
-        # print(exs_l1[i] + exs_l2[i])
-    # j = random.randint(0, 5)
     return exs_l1, exs_l2, exs_l3
-
+"""
+def do_f():
+    exs_l1, exs_l2, exs_l3 = practice()
+    a = exs_l1[3]
+    b = exs_l2[3]
+    c = exs_l3[3]
+    return a, b, c
+    ex0 = exs_l1[k]
+    ex1 = exs_l2[k]
+    ex2 = exs_l3[k]
+"""    
+def testinput():
+    import random
+    a, b, c = practice()
+    j = random.randint(0, 5)
+    print(a[j], b[j], c[j])
+    d = input("russian: ")
+    print(a[j], b[j], c[j])
+    if d == c[j]:
+        print("正解！")
+    else:
+        print("不正解")
+# testinput()
 def verb_p():
     conn = sqlite3.connect('rucon_forms_lab.db')
     c = conn.cursor()

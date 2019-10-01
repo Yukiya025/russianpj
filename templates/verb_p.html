@@ -6,9 +6,9 @@
 
 
 {% for i in range(7) %}
-    {{ verb[i] }} <!--"verb[" + str(i) + "]"-->
+    {{ verb[i] }} {# "verb[" + str(i) + "]" #}
 {% endfor %}
 {% block content %}
   <p>{{ verb[0] }}は第一変化動詞です。活用を覚えましょう。</p>
-  <a href="verb/do_f">練習する</a>
+  <button type="button" class="grammardoor" onclick="location.href='verb/do_f'">練習する</button>
 {% endblock %}

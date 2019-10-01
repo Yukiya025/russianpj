@@ -11,40 +11,60 @@ def russian():
     if request.method == 'GET':
         return render_template('russian.html')
 
+
 @app.route('/verb', methods=['GET'])
 def verb():
+    """
+    動詞<<делать>>現在活用文法表表示
+    """
+    # question_no = random.randint(0, 5)
     verb = ru_func.verb_p()
     return render_template("verb_p.html",
                             verb=verb)
 
+
 @app.route('/verb/do_f', methods=['GET'])
 def do_f():
     exs_l1, exs_l2, exs_l3 = ru_func.practice()
-    ex0 = exs_l1[0]
-    ex1 = exs_l2[0]
-    ex2 = exs_l3[0]
+    question_no = random.randint(0, 5)
+    ex0 = exs_l1[question_no]
+    ex1 = exs_l2[question_no]
+    ex2 = exs_l3[question_no]
     if request.method == 'GET':
         return render_template('verb/do_f.html',
-                                ex0=ex0,
-                                ex1=ex1
-                                )
-    return ex0, ex1, ex2
+                                    ex0=ex0,
+                                    ex1=ex1,
+                                    question_no=question_no
+                                    )
+    return ex0, ex1, ex2, question_no
 
-@app.route('/verb/do_f', methods=['POST'])
-def do_fp():
-    get1, get2, get3 = do_f()
-    # 活用形を入力する
+
+@app.route('/verb/do_f/<int:question_no>', methods=['POST'])
+def do_fp(question_no):
+    """
+    ---form_inputコピペ用---
+    делаю
+    делаешь
+    делает
+    делаем
+    делаете
+    делают
+    """
+    get1, get2, get3, question_no = do_f()
     form_input = request.form['input']
-    if get3 == form_input:
-        return render_template('verb/do_f.html',
-                            ex0=get1,
-                            ex1=get2,
-                            form_input= "正解！<" + get3 + ">です。")
-    else:
-        return render_template('verb/do_f.html',
-                            ex0=get1,
-                            ex1=get2,
-                            form_input= "正解は <" + get3 + "> です。もう一度してみてね。")
+    if request.method == 'POST':
+        if get3 == form_input:
+            return render_template('verb/do_f.html',
+                                    ex0=get1,
+                                    ex1=get2,
+                                    form_input= "正解！<" + get3 + ">です。",
+                                    question_no=question_no)
+        else:
+            return render_template('verb/do_f.html',
+                                    ex0=get1,
+                                    ex1=get2,
+                                    form_input= "正解は <" + get3 + "> です。もう一度してみてね。",
+                                    question_no=question_no)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -32,7 +32,7 @@ input {
 input#ans_btn {
   background: #1B73BA;
 }
-input#grammardoor {
+button.grammardoor {
   background: #bf7fff;
 }
 table {
