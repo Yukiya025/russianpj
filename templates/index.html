@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Page</title>
+</head>
+<body>
+    <div>
+        <h2>フォームを使う</h2>
+        <form action="{{ url_for('post_test') }}" method="POST">
+            <label for="visible_text">見える入力項目</label>
+            <input type="text" name="visible_text" id="visible_text">
+            <input type="hidden" value="secret value post" name="secret_text" id="secret_text">
+            <input type="submit" value="入力する">
+        </form>
+    </div>
+    <div>
+        <h2>フォームは使わない</h2>
+        <a href="{{ url_for('session_test') }}">他のページへ</a>
+    </div>
+</body>
+</html>

@@ -1,10 +1,11 @@
-from flask import Flask, request, render_template
+from flask import Flask, session, request, render_template
 import ru_func
 import random
 import os
 import sqlite3
 
 app = Flask(__name__)
+app.secret_key = 'secret key'
 
 @app.route('/', methods=['GET'])
 def russian():
@@ -18,6 +19,7 @@ def verb():
     動詞<<делать>>現在活用文法表表示
     """
     # question_no = random.randint(0, 5)
+    session['secret_text']  = random.randint(0, 5)
     verb = ru_func.verb_p()
     return render_template("verb_p.html",
                             verb=verb)
@@ -26,7 +28,7 @@ def verb():
 @app.route('/verb/do_f', methods=['GET'])
 def do_f():
     exs_l1, exs_l2, exs_l3 = ru_func.practice()
-    question_no = random.randint(0, 5)
+    question_no = session['secret_text']
     ex0 = exs_l1[question_no]
     ex1 = exs_l2[question_no]
     ex2 = exs_l3[question_no]
