@@ -5,10 +5,10 @@ h1 {
   color: #f39800; /*金茶*/
 }
 p {
+  font-size: 3vw;
   color: #180614; /*烏羽色*/
 }
-input {
-  width: 20%; /*180px*/
+input, button {
   padding:1%; /*15px*/
   font-size: 3vw; /*15px*/
   color:#ffffff;
@@ -29,15 +29,29 @@ input {
   -o-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
-input#ans_btn {
+input.inputform {
+  width: 20%; /*180px*/
+  background: #eaf4fc; /*月白*/
+}
+input.ans_btn {
+  width: 20%; /*180px*/
   background: #1B73BA;
 }
 button.grammardoor {
+  width: 20%; /*180px*/
+  background: #bf7fff;
+}
+button.move {
+  width: 60%; /*180px*/
   background: #bf7fff;
 }
 table {
   border-collapse: collapse;
-  border: solid 2px black;
+  border: solid 2px #192f60;
+  border-radius: 6px;
+  font-size: 3vw;
+  color: #0f2350;
+  text-align: center;
 }
 table col:nth-child(2n-1) {
 	background: #006e54;
@@ -46,6 +60,6 @@ table col:nth-child(2n) {
 	background: #eaf4fc;
 }
 table th, table td {
-  border: solid 1px black;
+  border: solid 1px #192f60;
   /*実線 1px 黒*/
 }

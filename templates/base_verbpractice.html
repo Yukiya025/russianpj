@@ -8,12 +8,12 @@
 <body>
   <form method="post" action="{{ url_for('do_f') }}/{{ question_no }}">
     {#  更新ボタンで練習問題をランダムに表示するようにしたい #}
-    <p>{{ ex0 }} <input name="input" id="inputform" type="text" size="10" maxlength="10"> {{ ex1 }}</p>
-    <input id="ans_btn" name="answer" type="submit" value="解答する">
+    <p>{{ ex0 }} <input name="input" class="inputform" type="text" size="10" maxlength="10"> {{ ex1 }}</p>
+    <input class="ans_btn" name="answer" type="submit" value="解答する">
   </form>
   <p>
     {{ form_input }}
   </p>
-  <button type="button" class="grammardoor" onclick="location.href='/verb'">戻って[練習する]ボタンを再度クリック</button>
+  <button type="button" class="move" onclick="location.href='/verb'">戻って[練習する]ボタンを再度クリック</button>
 </body>
 </html>
